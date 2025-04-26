@@ -13,4 +13,4 @@
 | 4  | Да      | 400        | Нет          | Номер телефона* | text      |                      |
 | 5  | Да      | 500        | Нет          | Сообщение       | textarea  |                      |
 
-3. Добавить файл **task2** в ваш шаблон по пути /local/{имя_шаблона}/components/bitrix/form.result.new
+3. Добавить файл **task2** в ваш шаблон по пути /local/templates/{имя_шаблона}/components/bitrix/form.result.new
