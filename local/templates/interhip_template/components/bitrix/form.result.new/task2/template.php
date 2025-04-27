@@ -18,7 +18,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
         '<form class="contact-form__form" onsubmit="return validateForm()"',
         $arResult["FORM_HEADER"]
     ) ?>
-
+    <div class="contact-form__form-inputs">
     <?php foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion) : ?>
         <?php if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] === 'hidden') : ?>
             <?= $arQuestion["HTML_CODE"] ?>
@@ -84,6 +84,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
             </div>
         <?php endif; ?>
     <?php endforeach; ?>
+    </div>
     <div class="contact-form__bottom">
         <div class="contact-form__bottom-policy">Нажимая &laquo;Отправить&raquo;, Вы&nbsp;подтверждаете, что
             ознакомлены, полностью согласны и&nbsp;принимаете условия &laquo;Согласия на&nbsp;обработку персональных
@@ -97,7 +98,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     function validateField(input) {
         const notification = document.getElementById(input.id + '_notification');
 
-        // Проверка полей: имя, компания, номер телефона, почта
+        // Проверка для остальных полей
         if (input.checkValidity()) {
             notification.style.display = 'none';
             input.classList.remove('invalid');
